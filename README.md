@@ -10,6 +10,7 @@ Simple python script which enables to follow the progress of 2D/3D classificatio
 + easygui
 + numpy
 
----How to run--- 
+---How to run---
+
 Double click the .py file and chose the directory where the classification or refinement has already been started. Opened window will update as soon as the iteration is finished.
 
