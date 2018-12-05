@@ -6,13 +6,6 @@ from os import listdir
 from os.path import isfile, join
 import re
 
-def open_mrcs(mrcs_file):
-    with mrcfile.open(mrcs_file) as mrc:
-        if mrc.is_image_stack():
-            return mrc.data
-        elif len(mrc.data.shape) == 3:
-            return mrc.data
-
 def check_mrcs_cv():
     last_mrcs = ''
     folder = easygui.diropenbox()
