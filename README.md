@@ -1,5 +1,5 @@
 # Relion_realtime_preview
-Follow your classification and refinement in Relion the real time!
+Follow your classification and refinement in Relion in the real time!
 
 Simple python script which enables to follow the progress of 2D/3D classification and refinement in Relion.
 
