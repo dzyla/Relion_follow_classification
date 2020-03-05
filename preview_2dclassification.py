@@ -13,7 +13,9 @@ def plot_classes(classes,classnumber,iter):
 
     if classnumber < 10:
         x_axis = 3
-    elif classnumber >= 10:
+    elif 30 >= classnumber >= 10:
+        x_axis = 6
+    elif classnumber >= 30:
         x_axis = 10
 
     if z%x_axis == 0:
@@ -52,34 +54,54 @@ def plot_classes(classes,classnumber,iter):
         else:
             final = np.concatenate((final,i),axis=0)
 
+    font = cv2.FONT_HERSHEY_SIMPLEX
+    bottomLeftCornerOfText = (30, 30)
+    fontScale = 1
+    fontColor = (1, 1, 1)
+    lineType = 2
+
+    cv2.putText(final, 'Iteration {}'.format(iter),
+                bottomLeftCornerOfText,
+                font,
+                fontScale,
+                fontColor,
+                lineType)
+
     win = 1000
-    cv2.namedWindow('Real-Time 2D classes, iteration '+str(iter), cv2.WINDOW_NORMAL)
-    cv2.resizeWindow('Real-Time 2D classes, iteration '+str(iter),win,int(win*y_axis/x_axis))
-    cv2.imshow('Real-Time 2D classes, iteration '+str(iter),final)
+    cv2.namedWindow('Real-Time 2D classes', cv2.WINDOW_NORMAL)
+    cv2.resizeWindow('Real-Time 2D classes' ,win,int(win*y_axis/x_axis))
+
+
+
+    cv2.imshow('Real-Time 2D classes', final)
 
 def open_mrcs_file(file_path):
     with mrcfile.open(file_path) as mrc_stack:
         return mrc_stack.data
 
 def real_time_2D():
+    import glob
+    import os
+
     folder = easygui.diropenbox()
-    classes_files = []
+
     last_mrcs = ''
 
     while True:
-        onlyfiles = [f for f in listdir(folder) if isfile(join(folder, f))]
-        for file in onlyfiles:
-            if 'run_it' in file:
-                if 'classes.mrcs' in file:
-                    classes_files.append(file)
 
-                pattern2 = '_it\d\d\d_'
-                w = re.findall(pattern2, classes_files[-1])
-                last_iter = (w[0][4:-1])
+        files = glob.glob(folder + '/*.*')
+        files.sort(key=os.path.getmtime)
+        mrcs_files = []
+        for file in files:
+            if 'classes.mrcs' in file:
+                mrcs_files.append(file)
 
+        pattern2 = '_it\d\d\d_'
+        w = re.findall(pattern2, mrcs_files[-1])
+        last_iter = (w[0][-4:-1])
 
         last_mrcs_old = last_mrcs
-        last_mrcs = (classes_files[-1])
+        last_mrcs = (mrcs_files[-1])
 
         if last_mrcs != last_mrcs_old:
             mrcs_file_path = join(folder, last_mrcs)
@@ -93,7 +115,7 @@ def real_time_2D():
         if cv2.waitKey(6000) & 0xFF == ord('q'):
             break
 
-        last_mrcs = (classes_files[-1])
+        last_mrcs = (mrcs_files[-1])
 
 if __name__ == "__main__":
     real_time_2D()
