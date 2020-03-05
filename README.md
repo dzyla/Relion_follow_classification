@@ -14,6 +14,9 @@ Simple python script which enables to follow the progress of 2D/3D classificatio
 
 Double click the .py file and chose the directory where the classification or refinement has already been started. Opened window will update as soon as the iteration is finished.
 
+---Update---
+class2D: now preview also works for the runs which were continued (run_ctXX_itXX...).
+
 2D classification preview:
 ![alt text](https://github.com/dzyla/Relion_realtime_preview/blob/master/2D_classification.JPG
 )
