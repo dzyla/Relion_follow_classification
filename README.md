@@ -57,14 +57,16 @@ Double click the .py file and chose the directory where the classification or re
 
 
 2D classification preview:
-![alt text](https://github.com/dzyla/Relion_realtime_preview/blob/master/2D_classification.JPG
+![alt text](https://github.com/dzyla/Relion_realtime_preview/blob/master/cls_projections.png
 )
 
 
 3D classification preview:
-![alt text](https://github.com/dzyla/Relion_realtime_preview/blob/master/3D_classes.JPG
+![alt text](https://github.com/dzyla/Relion_realtime_preview/blob/master/cls_3d.png
 )
 
 Class distribution and estimated resolution plots:
-![alt text](https://github.com/dzyla/Relion_realtime_preview/blob/master/3D_refinement.JPG
+![alt text](https://github.com/dzyla/Relion_realtime_preview/blob/master/class_dist.png
+)
+![alt text](https://github.com/dzyla/Relion_realtime_preview/blob/master/class_res.png
 )
