@@ -5,18 +5,53 @@ Simple python script which enables to follow the progress of 2D/3D classificatio
 
 ---Requirements---
 * Python 3+ with:
-+ OpenCV
++ matplotlib
++ gemmi
 + mrcfile
-+ easygui
 + numpy
++ pandas
 
 ---How to run---
+
+Install own python enviroment:
+```
+python3 -m venv new-env
+```
+Activate enviroment:
+```
+source new-env/bin/activate
+```
+Install packages:
+```
+pip install numpy matplotlib pandas gemmi mrcfile
+```
+Run script from command line:
+```
+python follow_rln_classification.py --i /path/to/classification/folder/ --w wait_time_in_seconds
+```
+Help can be accesed by:
+```
+python follow_rln_classification.py --h
+usage: follow_rln_classification.py [-h] [--i I] [--w W]
+
+Real-time preview Relion classification output from Class2D, Class3D and
+Refine3D jobs, including volume projections, class distributions and estimated
+resolution plots
+
+optional arguments:
+  -h, --help  show this help message and exit
+  --i I       Classification folder path
+  --w W       Wait time in seconds between refreshes. Adjust accordingly to
+              the expected time of the iteration. If the time is up and there
+              no new classification results plots will freeze
+```
 
 Double click the .py file and chose the directory where the classification or refinement has already been started. Opened window will update as soon as the iteration is finished.
 
 ---Update---
+200420: Now single script avaiable for all classification runs, including plotting of class distribution and class estimated resolution. All previous scripts are obsolete. 
 
-class2D: now preview also works for the runs which were continued (run_ctXX_itXX...).
+191010: class2D: now preview also works for the runs which were continued (run_ctXX_itXX...).
 
 
 
