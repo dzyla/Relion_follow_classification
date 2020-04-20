@@ -49,9 +49,10 @@ optional arguments:
 Double click the .py file and chose the directory where the classification or refinement has already been started. Opened window will update as soon as the iteration is finished.
 
 ---Update---
+
 200420: Now single script avaiable for all classification runs, including plotting of class distribution and class estimated resolution. All previous scripts are obsolete. 
 
-191010: class2D: now preview also works for the runs which were continued (run_ctXX_itXX...).
+~~191010: class2D: now preview also works for the runs which were continued (run_ctXX_itXX...).~~
 
 
 
@@ -64,6 +65,6 @@ Double click the .py file and chose the directory where the classification or re
 ![alt text](https://github.com/dzyla/Relion_realtime_preview/blob/master/3D_classes.JPG
 )
 
-3D refinement preview:
+Class distribution and estimated resolution plots:
 ![alt text](https://github.com/dzyla/Relion_realtime_preview/blob/master/3D_refinement.JPG
 )
